@@ -1,6 +1,6 @@
 import { View, Text, Animated } from "react-native";
 import { useState, useEffect, useRef } from "react";
-import { Redirect, useLocalSearchParams } from "expo-router";
+import { Link, Redirect, useLocalSearchParams } from "expo-router";
 import { Image } from "expo-image";
 import { UserServices } from "@/services/userServices";
 import Box from "../components/box";
@@ -81,7 +81,7 @@ export default function Auhtenticated() {
         <View style={{height: "100%", display: "flex", alignItems: "center", justifyContent: "center"}}>
           <Animated.Image source={require('../assets/images/logo-gatriz.png')} style={{width: 150, height: 150, transform: [{ scale }]}} />
         </View>:
-        <>
+        <View style={{position: "relative", height: '100%'}}>
           <View style={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "flex-start", padding: 13, paddingTop: 30, gap: 12.5, backgroundColor: "#FAA471",  elevation: 5, width: '100%'}}>
             <Image source={userProfileImageUrl} style={{ width: 40, height: 40, borderRadius: 999 }}/>
             <Text style={{fontSize: 20, color: "white", fontFamily: 'DynaPuff_400Regular', overflow: 'hidden', width: '80%'}} numberOfLines={1} ellipsizeMode="tail">{userName}</Text>
@@ -94,7 +94,11 @@ export default function Auhtenticated() {
               ))}
             </View>
           }
-        </>}
+          <Link href='https://wa.me/556196947048' style={{position: "absolute", bottom: 17.5, right: 17.5, zIndex: 1}}>
+            <Image source={require('../assets/images/logo-whatsapp.avif')} style={{width: 75, height: 75, borderRadius: 999}}/>
+          </Link>
+        </View>}
+        
         </View>
       }
     </>

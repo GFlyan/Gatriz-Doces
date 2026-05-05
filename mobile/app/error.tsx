@@ -1,4 +1,5 @@
 import { Image } from "expo-image";
+import { Link } from "expo-router";
 import { View, Text, Pressable } from "react-native";
 
 export default function Error() {
@@ -11,9 +12,9 @@ export default function Error() {
           <Text style={{fontFamily: 'DynaPuff_400Regular', fontSize: 20, color: "white"}}>Lamentemos, atualmente estamos enfrentando alguns erros... </Text>
           <Text style={{fontFamily: 'DynaPuff_400Regular', fontSize: 20, color: "white", marginTop: 20}}>Entre em contato conosco!</Text>
         </View>
-        <Pressable>
+        <Link href='https://wa.me/556196947048'>
           <Image source={require('../assets/images/logo-whatsapp.avif')} style={{width: 50, height: 50, borderRadius: 999}}/>
-        </Pressable>
+        </Link>
       </View>
     </View>
   );
